@@ -31,6 +31,7 @@ Partial Class Form1
         Me.btn10000calc = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblFormShow = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btn10calc
@@ -92,7 +93,7 @@ Partial Class Form1
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(130, 18)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(218, 78)
+        Me.Label1.Size = New System.Drawing.Size(213, 78)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = resources.GetString("Label1.Text")
         '
@@ -105,11 +106,23 @@ Partial Class Form1
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "Creator: David Packard"
         '
+        'lblFormShow
+        '
+        Me.lblFormShow.AutoSize = True
+        Me.lblFormShow.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFormShow.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.lblFormShow.Location = New System.Drawing.Point(146, 124)
+        Me.lblFormShow.Name = "lblFormShow"
+        Me.lblFormShow.Size = New System.Drawing.Size(188, 18)
+        Me.lblFormShow.TabIndex = 8
+        Me.lblFormShow.Text = "Google Form (click me)"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(346, 200)
+        Me.Controls.Add(Me.lblFormShow)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btn10000calc)
@@ -168,5 +181,15 @@ Partial Class Form1
         Dim path As String = My.Application.Info.DirectoryPath
         Dim OperatingPath As String = IO.Path.Combine(path, "bench10000.bat")
         Shell(OperatingPath)
+    End Sub
+
+    Public WithEvents lblFormShow As Label
+
+    Private Sub lblFormShow_Click(sender As Object, e As EventArgs) Handles lblFormShow.Click
+        Dim myForm As ScoreSubmiss
+        If myForm Is Nothing Then
+            myForm = ScoreSubmiss
+        End If
+        myForm.Show()
     End Sub
 End Class

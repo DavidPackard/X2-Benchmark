@@ -1,21 +1,32 @@
-@echo on
+@echo off
 @setlocal
 
-set start=%time%
+::All Global Variables
 
-::your command
+
+set start=%time%
 
 ::Checks whether the benchmark is done
 set benchnum=1
 set benchcomp=0
-:benchloopstart
-set limit=10
-if %benchcomp% lss %limit% (goto :benchloopmid)
-goto :finish
+set limit=1000
+set numlimit=1073741824
 
-:benchloopmid
+:benchloopstart
+if %benchcomp% lss %limit% (goto :benchloop1)
+goto :finish
+:benchloop1
+if %benchnum% == %numlimit% (goto :benchloop3)
+goto :benchloop2
+:benchloop2
 set /a benchnum = %benchnum% * 2
 echo %benchnum%
+goto :benchloop4
+:benchloop3
+set /a benchnum = %benchnum%/2
+echo %benchnum%
+goto :benchloop4
+:benchloop4
 set /a benchcomp = %benchcomp% + 1
 echo %benchcomp%
 goto :benchloopstart

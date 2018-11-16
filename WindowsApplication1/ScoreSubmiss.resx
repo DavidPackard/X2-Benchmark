@@ -117,12 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Label1.Text" xml:space="preserve">
-    <value>All of these buttons will open batch files that
-will run for different lengths of time. These 
-batch files will attempt to calculate x2 as 
-many times as possible, which is how the 
-benchmark works. Feel free to share your 
-scores with me on my google form.</value>
-  </data>
 </root>

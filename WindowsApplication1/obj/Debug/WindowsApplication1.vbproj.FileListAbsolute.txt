@@ -9,3 +9,7 @@ C:\Users\PHOTO AND VIDEO\Documents\GitHub\X2-Benchmark\WindowsApplication1\obj\D
 C:\Users\PHOTO AND VIDEO\Documents\GitHub\X2-Benchmark\WindowsApplication1\obj\Debug\WindowsApplication1.exe
 C:\Users\PHOTO AND VIDEO\Documents\GitHub\X2-Benchmark\WindowsApplication1\obj\Debug\WindowsApplication1.xml
 C:\Users\PHOTO AND VIDEO\Documents\GitHub\X2-Benchmark\WindowsApplication1\obj\Debug\WindowsApplication1.pdb
+C:\Users\PHOTO AND VIDEO\Documents\GitHub\X2-Benchmark\WindowsApplication1\bin\Debug\WindowsApplication1.exe.manifest
+C:\Users\PHOTO AND VIDEO\Documents\GitHub\X2-Benchmark\WindowsApplication1\bin\Debug\WindowsApplication1.application
+C:\Users\PHOTO AND VIDEO\Documents\GitHub\X2-Benchmark\WindowsApplication1\obj\Debug\WindowsApplication1.exe.manifest
+C:\Users\PHOTO AND VIDEO\Documents\GitHub\X2-Benchmark\WindowsApplication1\obj\Debug\WindowsApplication1.application

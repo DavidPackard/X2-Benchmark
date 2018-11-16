@@ -9,7 +9,7 @@ set start=%time%
 ::Checks whether the benchmark is done
 set benchnum=1
 set benchcomp=0
-set limit=500
+set limit=50
 set numlimit=1073741824
 
 :benchloopstart
@@ -49,5 +49,5 @@ if 1%ms% lss 100 set ms=0%ms%
 
 :: Mission accomplished
 set /a totalsecs = %hours%*3600 + %mins%*60 + %secs%
-echo Benchmark Result:%hours%:%mins%:%secs%.%ms% (%totalsecs%.%ms%s total)
+echo command took %hours%:%mins%:%secs%.%ms% (%totalsecs%.%ms%s total)
 pause

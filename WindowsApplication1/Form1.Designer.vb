@@ -24,11 +24,11 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.btn10calc = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
+        Me.btn50calc = New System.Windows.Forms.Button()
+        Me.btn100calc = New System.Windows.Forms.Button()
+        Me.btn500calc = New System.Windows.Forms.Button()
+        Me.btn1000calc = New System.Windows.Forms.Button()
+        Me.btn10000calc = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
@@ -42,50 +42,50 @@ Partial Class Form1
         Me.btn10calc.Text = "10 Calculations"
         Me.btn10calc.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btn50calc
         '
-        Me.Button2.Location = New System.Drawing.Point(13, 43)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(111, 23)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "50 Calculations"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btn50calc.Location = New System.Drawing.Point(13, 43)
+        Me.btn50calc.Name = "btn50calc"
+        Me.btn50calc.Size = New System.Drawing.Size(111, 23)
+        Me.btn50calc.TabIndex = 1
+        Me.btn50calc.Text = "50 Calculations"
+        Me.btn50calc.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btn100calc
         '
-        Me.Button3.Location = New System.Drawing.Point(13, 73)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(111, 23)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "100 Calculations"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btn100calc.Location = New System.Drawing.Point(13, 73)
+        Me.btn100calc.Name = "btn100calc"
+        Me.btn100calc.Size = New System.Drawing.Size(111, 23)
+        Me.btn100calc.TabIndex = 2
+        Me.btn100calc.Text = "100 Calculations"
+        Me.btn100calc.UseVisualStyleBackColor = True
         '
-        'Button4
+        'btn500calc
         '
-        Me.Button4.Location = New System.Drawing.Point(13, 103)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(111, 23)
-        Me.Button4.TabIndex = 3
-        Me.Button4.Text = "500 Calculations"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.btn500calc.Location = New System.Drawing.Point(13, 103)
+        Me.btn500calc.Name = "btn500calc"
+        Me.btn500calc.Size = New System.Drawing.Size(111, 23)
+        Me.btn500calc.TabIndex = 3
+        Me.btn500calc.Text = "500 Calculations"
+        Me.btn500calc.UseVisualStyleBackColor = True
         '
-        'Button5
+        'btn1000calc
         '
-        Me.Button5.Location = New System.Drawing.Point(13, 133)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(111, 23)
-        Me.Button5.TabIndex = 4
-        Me.Button5.Text = "1,000 Calculations"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.btn1000calc.Location = New System.Drawing.Point(13, 133)
+        Me.btn1000calc.Name = "btn1000calc"
+        Me.btn1000calc.Size = New System.Drawing.Size(111, 23)
+        Me.btn1000calc.TabIndex = 4
+        Me.btn1000calc.Text = "1,000 Calculations"
+        Me.btn1000calc.UseVisualStyleBackColor = True
         '
-        'Button6
+        'btn10000calc
         '
-        Me.Button6.Location = New System.Drawing.Point(13, 163)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(111, 23)
-        Me.Button6.TabIndex = 5
-        Me.Button6.Text = "10,000 Calculations"
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.btn10000calc.Location = New System.Drawing.Point(13, 163)
+        Me.btn10000calc.Name = "btn10000calc"
+        Me.btn10000calc.Size = New System.Drawing.Size(111, 23)
+        Me.btn10000calc.TabIndex = 5
+        Me.btn10000calc.Text = "10,000 Calculations"
+        Me.btn10000calc.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -112,11 +112,11 @@ Partial Class Form1
         Me.ClientSize = New System.Drawing.Size(346, 200)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button6)
-        Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.btn10000calc)
+        Me.Controls.Add(Me.btn1000calc)
+        Me.Controls.Add(Me.btn500calc)
+        Me.Controls.Add(Me.btn100calc)
+        Me.Controls.Add(Me.btn50calc)
         Me.Controls.Add(Me.btn10calc)
         Me.Name = "Form1"
         Me.Text = "Test benchmark form"
@@ -126,17 +126,47 @@ Partial Class Form1
     End Sub
 
     Friend WithEvents btn10calc As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button6 As Button
+    Friend WithEvents btn50calc As Button
+    Friend WithEvents btn100calc As Button
+    Friend WithEvents btn500calc As Button
+    Friend WithEvents btn1000calc As Button
+    Friend WithEvents btn10000calc As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn10calc.Click
         Dim path As String = My.Application.Info.DirectoryPath
-        Dim OperatingPath As String = IO.Path.Combine(path, "bench.bat")
+        Dim OperatingPath As String = IO.Path.Combine(path, "bench10.bat")
+        Shell(OperatingPath)
+    End Sub
+
+    Private Sub btn50calc_Click(sender As Object, e As EventArgs) Handles btn50calc.Click
+        Dim path As String = My.Application.Info.DirectoryPath
+        Dim OperatingPath As String = IO.Path.Combine(path, "bench50.bat")
+        Shell(OperatingPath)
+    End Sub
+
+    Private Sub btn100calc_Click(sender As Object, e As EventArgs) Handles btn100calc.Click
+        Dim path As String = My.Application.Info.DirectoryPath
+        Dim OperatingPath As String = IO.Path.Combine(path, "bench100.bat")
+        Shell(OperatingPath)
+    End Sub
+
+    Private Sub btn500calc_Click(sender As Object, e As EventArgs) Handles btn500calc.Click
+        Dim path As String = My.Application.Info.DirectoryPath
+        Dim OperatingPath As String = IO.Path.Combine(path, "bench500.bat")
+        Shell(OperatingPath)
+    End Sub
+
+    Private Sub btn1000calc_Click(sender As Object, e As EventArgs) Handles btn1000calc.Click
+        Dim path As String = My.Application.Info.DirectoryPath
+        Dim OperatingPath As String = IO.Path.Combine(path, "bench1000.bat")
+        Shell(OperatingPath)
+    End Sub
+
+    Private Sub btn10000calc_Click(sender As Object, e As EventArgs) Handles btn10000calc.Click
+        Dim path As String = My.Application.Info.DirectoryPath
+        Dim OperatingPath As String = IO.Path.Combine(path, "bench10000.bat")
         Shell(OperatingPath)
     End Sub
 End Class

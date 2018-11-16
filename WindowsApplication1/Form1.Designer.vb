@@ -23,7 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btn10calc = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -33,14 +33,14 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'Button1
+        'btn10calc
         '
-        Me.Button1.Location = New System.Drawing.Point(13, 13)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(111, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "10 Calculations"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btn10calc.Location = New System.Drawing.Point(13, 13)
+        Me.btn10calc.Name = "btn10calc"
+        Me.btn10calc.Size = New System.Drawing.Size(111, 23)
+        Me.btn10calc.TabIndex = 0
+        Me.btn10calc.Text = "10 Calculations"
+        Me.btn10calc.UseVisualStyleBackColor = True
         '
         'Button2
         '
@@ -117,7 +117,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btn10calc)
         Me.Name = "Form1"
         Me.Text = "Test benchmark form"
         Me.ResumeLayout(False)
@@ -125,7 +125,7 @@ Partial Class Form1
 
     End Sub
 
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btn10calc As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
@@ -133,4 +133,10 @@ Partial Class Form1
     Friend WithEvents Button6 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn10calc.Click
+        Dim path As String = My.Application.Info.DirectoryPath
+        Dim OperatingPath As String = IO.Path.Combine(path, "bench.bat")
+        Shell(OperatingPath)
+    End Sub
 End Class

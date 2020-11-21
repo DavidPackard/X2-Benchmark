@@ -34,4 +34,3 @@ A lower time means a faster computer, which is good.
 As you'll soon notice, there are several branches and releases for this repo.
 Any releases are stable, and should work fine. Please feel free to let me know if anything goes wrong, and I'll fix it in the next release.
 The branches that are marked as STABLE are the source code for the releases, and usually contain the release .zip file somewhere in it. The Work In Progress branch however, is the unstable pre-release testing environment that I use as a base to code the newer versions, eventually once this branch becomes stable, it will become its own STABLE branch and Release.
-

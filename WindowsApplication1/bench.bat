@@ -1,21 +1,23 @@
-@echo on
+@echo off
 @setlocal
 
-set start=%time%
+::All Global Variables
 
-::your command
+
+set start=%time%
 
 ::Checks whether the benchmark is done
 set benchnum=1
 set benchcomp=0
-:benchloopstart
-set limit=10
-if %benchcomp% lss %limit% (goto :benchloopmid)
-goto :finish
+set numlimit=1073741824
 
-:benchloopmid
+
+:benchloopstart
+if %benchnum% == %numlimit% (goto :finish)
+
 set /a benchnum = %benchnum% * 2
 echo %benchnum%
+
 set /a benchcomp = %benchcomp% + 1
 echo %benchcomp%
 goto :benchloopstart
@@ -38,5 +40,4 @@ if 1%ms% lss 100 set ms=0%ms%
 
 :: Mission accomplished
 set /a totalsecs = %hours%*3600 + %mins%*60 + %secs%
-echo command took %hours%:%mins%:%secs%.%ms% (%totalsecs%.%ms%s total)
-pause
+echo Benchmark took %hours%:%mins%:%secs%.%ms% (%totalsecs%.%ms%s total) to complete 30 calculations >test.txt

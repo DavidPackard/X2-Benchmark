@@ -24,29 +24,36 @@ namespace _2xBenchmark
 
     private void btnRunBenchmark_Click(object sender, EventArgs e)
     {
+            //int loopcount = Int32.Parse(txtboxLoopAmount.Text);
         Process proc = null;
         try
             {
-                string BatchDir = @Application.StartupPath;
-                proc = new Process();
-                proc.StartInfo.WorkingDirectory = BatchDir;
-                proc.StartInfo.FileName = "bench.bat";
-                proc.StartInfo.CreateNoWindow = false;
-                proc.Start();
-                proc.WaitForExit();
+                
+                for (int i = Int32.Parse(txtboxLoopAmount.Text); i > 0; i--)
+                {
+                    string BatchDir = @Application.StartupPath;
+                    proc = new Process();
+                    proc.StartInfo.WorkingDirectory = BatchDir;
+                    proc.StartInfo.FileName = "bench.bat";
+                    proc.StartInfo.CreateNoWindow = false;
+                    proc.Start();
+                    proc.WaitForExit();
+                    // Read Text from txt File
+                    string workingdir = @Application.StartupPath;
+                    string txtname = string.Format(@"\test.txt");
+                    proc.StartInfo.UseShellExecute = false;
+                    proc.StartInfo.CreateNoWindow = true;
+                    string textfiledir = workingdir + txtname;
+                    string result = System.IO.File.ReadAllText(textfiledir);
+                    txtboxResultBox.Text += result;
+                }
+
             }
             catch (Exception exc1)
             {
                 Console.WriteLine(exc1.StackTrace);
             }
-            // Read Text from txt File
-            string workingdir = @Application.StartupPath;
-            string txtname = string.Format(@"\test.txt");
-            proc.StartInfo.UseShellExecute = false;
-            proc.StartInfo.CreateNoWindow = true;
-            string textfiledir = workingdir + txtname;
-            string result = System.IO.File.ReadAllText(textfiledir);
-            txtboxResultBox.Text += result;
+            
     }
 
         private void btnClearResults_Click(object sender, EventArgs e)

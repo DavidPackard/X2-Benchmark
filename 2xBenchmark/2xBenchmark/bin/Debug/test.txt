@@ -1,1 +1,1 @@
-0:0:0.06 (0.06s total) to complete 30 calculations 
+0:0:0.05 (0.05s total) to complete 30 calculations 

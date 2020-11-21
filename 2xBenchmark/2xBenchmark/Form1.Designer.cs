@@ -31,13 +31,15 @@
             this.txtboxResultBox = new System.Windows.Forms.TextBox();
             this.btnClearResults = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtboxLoopAmount = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnRunBenchmark
             // 
             this.btnRunBenchmark.Location = new System.Drawing.Point(57, 56);
             this.btnRunBenchmark.Name = "btnRunBenchmark";
-            this.btnRunBenchmark.Size = new System.Drawing.Size(888, 83);
+            this.btnRunBenchmark.Size = new System.Drawing.Size(537, 83);
             this.btnRunBenchmark.TabIndex = 0;
             this.btnRunBenchmark.Text = "Run Benchmark";
             this.btnRunBenchmark.UseVisualStyleBackColor = true;
@@ -50,7 +52,7 @@
             this.txtboxResultBox.Name = "txtboxResultBox";
             this.txtboxResultBox.ReadOnly = true;
             this.txtboxResultBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtboxResultBox.Size = new System.Drawing.Size(888, 261);
+            this.txtboxResultBox.Size = new System.Drawing.Size(1011, 261);
             this.txtboxResultBox.TabIndex = 1;
             // 
             // btnClearResults
@@ -73,11 +75,31 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txtboxLoopAmount
+            // 
+            this.txtboxLoopAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtboxLoopAmount.Location = new System.Drawing.Point(626, 79);
+            this.txtboxLoopAmount.Name = "txtboxLoopAmount";
+            this.txtboxLoopAmount.Size = new System.Drawing.Size(100, 38);
+            this.txtboxLoopAmount.TabIndex = 4;
+            this.txtboxLoopAmount.Text = "1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(747, 82);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(321, 32);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Amount of Times to loop";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1011, 597);
+            this.ClientSize = new System.Drawing.Size(1118, 597);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtboxLoopAmount);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnClearResults);
             this.Controls.Add(this.txtboxResultBox);
@@ -96,6 +118,8 @@
         private System.Windows.Forms.TextBox txtboxResultBox;
         private System.Windows.Forms.Button btnClearResults;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtboxLoopAmount;
+        private System.Windows.Forms.Label label1;
     }
 }
 
